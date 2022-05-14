@@ -1,0 +1,50 @@
+﻿@page
+@model IWEI.Areas.Admin.pages.SiteSlider.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Slider</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Slider.Id" />
+            <div class="form-group">
+                <label asp-for="Slider.Name" class="control-label"></label>
+                <input asp-for="Slider.Name" class="form-control" />
+                <span asp-validation-for="Slider.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Slider.Src" class="control-label"></label>
+                <input asp-for="Slider.Src" class="form-control" />
+                <span asp-validation-for="Slider.Src" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Slider.Show" /> @Html.DisplayNameFor(model => model.Slider.Show)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Slider.Sort" class="control-label"></label>
+                <input asp-for="Slider.Sort" class="form-control" />
+                <span asp-validation-for="Slider.Sort" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
